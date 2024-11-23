@@ -30,20 +30,20 @@ public void draw()
 
 
 public void keyPressed() {
- if (key == 'w') {
+ if (key == 'w' || key == 'W') {
   bob.accelerate(.1); 
 
  }
  
- if(key == 's') {
+ if(key == 's' || key == 'S') {
   bob.accelerate(-.1); 
  }
  
-  if(key == 'd') {
+  if(key == 'd' || key == 'D") {
   bob.turn(10); 
  }
  
- if(key == 'a') {
+ if(key == 'a' || key == 'A') {
   bob.turn(-10); 
  }
 
@@ -51,17 +51,17 @@ public void keyPressed() {
 
 
 public void keyReleased() {
-   if (key == 'w') {
+   if (key == 'w' || key == 'W') {
    bob.setYSpeed(0);
    bob.setXSpeed(0);
  }
  
- if(key == 's') {
+ if(key == 's'|| key == 'S') {
    bob.setYSpeed(0);
    bob.setXSpeed(0);
  }
  
- if (key == 'h') {
+ if (key == 'h'|| key == 'H') {
    int bomba = (int)(Math.random()500);
    int bomb = (int)(Math.random()500);
    int wilbur = (int)(Math.random()360);
