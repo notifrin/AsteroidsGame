@@ -67,14 +67,19 @@ class Asteroid extends Floater {
     public double getDirectionY() { 
         return myDirectionY; 
     }*/
-    public double getCenterX() { 
+    public double getX() { 
         return myCenterX; 
     }
-    public double getCenterY() { 
+    public double getY() { 
         return myCenterY; 
     }
     public double getPointDirection() {
         return myPointDirection;
     }
-
+    public double getXSpeed(){
+    return myXspeed;
+  }
+  public double getYSpeed(){
+    return myYspeed;
+  }
 }
