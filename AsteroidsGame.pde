@@ -1,13 +1,14 @@
 Spaceship bob = new Spaceship();
 Star [] nightSky = new Star[200];
-Asteroid [] rock = new Asteroid[10];
+ArrayList <Asteroid> rock = new ArrayList <Asteroid>(9999999) ;
 public void setup(){
   size(500,500);
   for (int i =0; i < nightSky.length; i++){
     nightSky[i] = new Star();
   }
-  for (int i =0; i < rock.length; i++){
-    rock[i] = new Asteroid(173);
+  for (int i =0; i < 10; i++){
+    rock.add(new Asteroid(173));
+    
   }
 }
 public void draw(){
@@ -16,11 +17,12 @@ public void draw(){
     nightSky[i].show();
     nightSky[i].twinkle();
   }
-  for (int i = 0; i<rock.length;i++){
-    rock[i].show();
-    rock[i].move();
-    if (rock[i].getXSpeed() ==0 && rock[i].getYSpeed() ==0){
-    rock[i].accelerate((Math.random()*2)-1);}
+  for (int i = 0; i < rock.size(); i++) {
+    rock.get(i).move();
+    rock.get(i).show();
+    float p = dist((float)bob.getX(), (float)bob.getY(), (float)rock.get(i).getX(),(float) rock.get(i).getY());
+    if(p<40)
+     rock.remove(i);
   }
   bob.show();
   bob.move();
