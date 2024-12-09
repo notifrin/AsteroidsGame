@@ -19,7 +19,8 @@ public void draw(){
   for (int i = 0; i<rock.length;i++){
     rock[i].show();
     rock[i].move();
-    rock[i].accelerate(Math.random());
+    if (rock[i].getXSpeed() ==0 && rock[i].getYSpeed() ==0){
+    rock[i].accelerate((Math.random()*2)-1);}
   }
   bob.show();
   bob.move();
