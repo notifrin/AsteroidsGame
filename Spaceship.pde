@@ -19,6 +19,12 @@ class Spaceship extends Floater{
   yCorners[6] = -4;
   myColor = color(183,255,64);
   }
+  public double getXSpeed(){
+    return myXspeed;
+  }
+  public double getYSpeed(){
+    return myYspeed;
+  }
   public void setX(int speed) {
      myCenterX = speed;
    }
@@ -46,4 +52,20 @@ class Spaceship extends Floater{
   myCenterY = (double)(Math.random()*400)+50;
   myPointDirection = (double)(Math.random()*360);
   }
+  public void deaccelerate (double dAmount)   
+  {          
+    //convert the current direction the floater is pointing to radians    
+    double dRadians =myPointDirection*(Math.PI/180);     
+    //change coordinates of direction of travel    
+    myXspeed -= ((dAmount) * Math.cos(dRadians));    
+    myYspeed -= ((dAmount) * Math.sin(dRadians));       
+  }   
+  public void backdeaccelerate (double dAmount)   
+  {          
+    //convert the current direction the floater is pointing to radians    
+    double dRadians = myPointDirection*(Math.PI/180);     
+    //change coordinates of direction of travel    
+    myXspeed -= ((dAmount) * -Math.cos(dRadians));    
+    myYspeed -= ((dAmount) * -Math.sin(dRadians));       
+  }   
 }
