@@ -6,7 +6,7 @@ class Star {
     size = 3;
   }
   public void twinkle(){
-    size = (int)(Math.random()*1.1)+2;
+    size = (int)(Math.random()*2)+2;
   }
   public void show(){
     noStroke();
