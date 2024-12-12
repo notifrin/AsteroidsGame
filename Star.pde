@@ -9,7 +9,8 @@ class Star {
     size = (int)(Math.random()*1.1)+2;
   }
   public void show(){
-    fill(255);
+    noStroke();
+    fill(color(255,255,255));
     ellipse(myX,myY,size,size);
   }
 }
