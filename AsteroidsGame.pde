@@ -1,5 +1,5 @@
 Spaceship bob = new Spaceship();
-Star [] nightSky = new Star[200];
+Star [] nightSky = new Star[300];
 ArrayList <Asteroid> rock = new ArrayList <Asteroid>() ;
 int n = 0;
 //ArrayList <Asteroid> result = new ArrayList<Asteroid>();
@@ -89,5 +89,9 @@ public void keyPressed() {
  
  if(key == 'a') {
   bob.turn(-10); 
+ }
+ if (key == 'q'){
+ bob.setXSpeed(0);
+ bob.setYSpeed(0);
  }
 }
