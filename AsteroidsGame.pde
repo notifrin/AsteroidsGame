@@ -14,9 +14,11 @@ public void draw(){
 
   background(0);
   if (n <10){
+  for (int i =0; i < 10; i++){
     n++;
     rock.add(new Asteroid(173));
-  }
+     
+  }}
   for (int i = 0; i<nightSky.length;i++){
     nightSky[i].show();
     nightSky[i].twinkle();
