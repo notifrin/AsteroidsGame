@@ -52,14 +52,6 @@ public void draw()
 
 
 public void keyPressed() {
- if (key == 'w') {
-  ship.accelerate(.1); 
-
- }
- 
- if(key == 's') {
-  ship.accelerate(-.1); 
- }
  
   if(key == 'd') {
   ship.turn(10); 
