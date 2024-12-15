@@ -2,11 +2,11 @@ class Star {
   private int myX, myY,size;
   public Star(){
     myX = (int)(Math.random()*1000);
-    myY = (int)(Math.random()*700);
+    myY = (int)(Math.random()*800);
     size = 3;
   }
   public void twinkle(){
-    size = (int)(Math.random()*2)+2;
+    size = (int)(Math.random()*2)+4;
   }
   public void show(){
     noStroke();
