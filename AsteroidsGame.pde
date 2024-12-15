@@ -146,7 +146,7 @@ public void keyPressed() {
  logan.setXSpeed(0);
  logan.setYSpeed(0);
  }
- if(key == ' '){
+ if(key == 'e'){
  lance.add(new Bullet(logan));
  }
 }
