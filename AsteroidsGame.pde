@@ -9,7 +9,7 @@ int points = 0;
 boolean mark = false;
 boolean lose = false;
 public void setup(){
-  size(1000,600);
+  size(1000,800);
   for (int i =0; i < alice.length; i++){
     alice[i] = new Star();
     logan.setX(250);
@@ -146,7 +146,10 @@ public void keyPressed() {
  logan.setXSpeed(0);
  logan.setYSpeed(0);
  }
- if(key == 'e'){
+ if(key == ' '){
  lance.add(new Bullet(logan));
+ }
+ if(key == 'p'){
+ lose = false;
  }
 }
