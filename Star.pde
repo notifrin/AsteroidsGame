@@ -1,8 +1,8 @@
 class Star {
   private int myX, myY,size;
   public Star(){
-    myX = (int)(Math.random()*500);
-    myY = (int)(Math.random()*500);
+    myX = (int)(Math.random()*1000);
+    myY = (int)(Math.random()*800);
     size = 3;
   }
   public void twinkle(){
