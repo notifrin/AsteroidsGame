@@ -6,9 +6,10 @@ ArrayList <Bullet> lance = new ArrayList<Bullet>();
 int n = 0;
 int t = 0;
 int points = 0;
+boolean mark = false;
 boolean lose = false;
 public void setup(){
-  size(1000,600);
+  size(1000,800);
   for (int i =0; i < alice.length; i++){
     alice[i] = new Star();
     logan.setX(250);
@@ -75,8 +76,9 @@ if (lose == false){
       }
       if (dist((float)(logan.getX()), (float)(logan.getY()), (float)(rock.get(i).getX()), (float)(rock.get(i).getY())) < 30) {
           System.out.println("hit");
-          lose = true;
+         
           rockRemove.add(i);
+           mark = true;
         }
         
     }
@@ -84,6 +86,9 @@ if (lose == false){
     for (int i : rockRemove) {
       if (i>= 0&& i<rock.size()){
       rock.remove(i);
+      }
+      if(mark == true){
+      lose = true;
       }
       n--;
     }
