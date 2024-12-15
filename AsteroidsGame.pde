@@ -75,7 +75,7 @@ if (lose == false){
         
       }
       if (dist((float)(logan.getX()), (float)(logan.getY()), (float)(rock.get(i).getX()), (float)(rock.get(i).getY())) < 30) {
-          System.out.println("hit");
+        //  System.out.println("hit");
          lose = true;
           rockRemove.add(i);
            mark = true;
