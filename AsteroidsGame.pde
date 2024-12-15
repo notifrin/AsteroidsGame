@@ -1,5 +1,5 @@
 Spaceship logan = new Spaceship();
-Star [] alice = new Star[300];
+Star [] alice = new Star[400];
 ArrayList <ShootingStar> boom = new ArrayList<ShootingStar>();
 ArrayList <Asteroid> rock = new ArrayList <Asteroid>() ;
 ArrayList <Bullet> lance = new ArrayList<Bullet>();
