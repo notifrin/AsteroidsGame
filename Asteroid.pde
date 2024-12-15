@@ -82,4 +82,10 @@ class Asteroid extends Floater {
   public double getYSpeed(){
     return myYspeed;
   }
+  public void setX(int speed) {
+     myCenterX = speed;
+   }
+   public void setY(int speed) {
+     myCenterY = speed;
+   }
 }
