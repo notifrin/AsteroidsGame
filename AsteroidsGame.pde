@@ -8,7 +8,7 @@ int t = 0;
 int points = 0;
 boolean lose = false;
 public void setup(){
-  size(1000,800);
+  size(1000,600);
   for (int i =0; i < alice.length; i++){
     alice[i] = new Star();
     logan.setX(250);
