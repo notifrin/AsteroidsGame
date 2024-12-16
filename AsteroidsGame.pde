@@ -15,15 +15,7 @@ public void setup()
   //your code here
 }
 public void keyReleased() {
-   if (key == 'w') {
-   ship.setYSpeed(0);
-   ship.setXSpeed(0);
- }
- 
- if(key == 's') {
-   ship.setYSpeed(0);
-   ship.setXSpeed(0);
- }
+
  
  if (key == 'h') {
    int ding = (int)(Math.random()*500);
@@ -52,7 +44,13 @@ public void draw()
 
 
 public void keyPressed() {
+    if (key == 'w') {
+      ship.accelerate(0.2);
+ }
  
+ if(key == 's') {
+  ship.accelerate(-0.2);
+ }
   if(key == 'd') {
   ship.turn(10); 
  }
