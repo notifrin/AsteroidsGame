@@ -18,14 +18,14 @@ public void keyReleased() {
 
  
  if (key == 'h') {
-   int ding = (int)(Math.random()*500);
-   int speed = (int)(Math.random()*500);
-   int wilbur = (int)(Math.random()*360);
+   int speedy = (int)(Math.random()*500);
+   int speedx = (int)(Math.random()*500);
+   int direction = (int)(Math.random()*360);
    ship.setX(ding);
-   ship.setY(speed);
-   ship.setYSpeed(0);
-   ship.setXSpeed(0);
-   ship.setDirect((double)wilbur);
+   ship.setY(speedx);
+   ship.setYspeedx(0);
+   ship.setXspeedx(0);
+   ship.setDirect((double)direction);
  }
 }
 
@@ -54,9 +54,3 @@ public void keyPressed() {
   if(key == 'd') {
   ship.turn(10); 
  }
- 
- if(key == 'a') {
-  ship.turn(-10); 
- }
-
-}
