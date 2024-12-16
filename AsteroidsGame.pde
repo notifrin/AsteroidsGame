@@ -21,10 +21,10 @@ public void keyReleased() {
    int speedy = (int)(Math.random()*500);
    int speedx = (int)(Math.random()*500);
    int direction = (int)(Math.random()*360);
-   ship.setX(ding);
+   ship.setX(speedy);
    ship.setY(speedx);
-   ship.setYspeedx(0);
-   ship.setXspeedx(0);
+   ship.setY(0);
+   ship.setX(0);
    ship.setDirect((double)direction);
  }
 }
@@ -54,3 +54,4 @@ public void keyPressed() {
   if(key == 'd') {
   ship.turn(10); 
  }
+}
