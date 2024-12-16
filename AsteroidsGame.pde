@@ -54,4 +54,7 @@ public void keyPressed() {
   if(key == 'd') {
   ship.turn(10); 
  }
+  if(key == 'a') {
+  ship.turn(-10); 
+ }
 }
