@@ -1,4 +1,4 @@
-class Star {
+public class Star {
   private int myX, myY,size;
   public Star(){
     myX = (int)(Math.random()*1000);
