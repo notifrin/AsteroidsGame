@@ -1,4 +1,4 @@
-class Spaceship extends Floater{
+public class Spaceship extends Floater{
   public Spaceship(){
   corners = 7;
   xCorners = new int[corners];/*{-8,16,-8,-8,-8,-12,-12}*/
