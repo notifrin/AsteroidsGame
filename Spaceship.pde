@@ -23,7 +23,7 @@ class Spaceship extends Floater
   
      myColor = color(255);
      
-    }
+   }
     
    public void setX(int speed) {
      myCenterX = speed;
@@ -44,4 +44,6 @@ class Spaceship extends Floater
    public void setDirect(double speed) {
      myPointDirection = speed;
    }
+     public int getY(){return (int)myCenterY;}  
+  public int getX(){return (int)myCenterX;}
 }
