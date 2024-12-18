@@ -1,76 +1,49 @@
-//boooooom
-Star [] hamilition;
-Spaceship bassan;
-ArrayList<Astroids> mrchan;
-public void keyReleased() {
-   int ding = (int)(Math.random()*500);
-   int speed = (int)(Math.random()*500);
-   int wilbur = (int)(Math.random()*360);
- if (key == 'w'){
-bassan.accelerate(-.05);
- }
- if (key == 'h') {
-   bassan.setX(ding);
-   bassan.setY(speed);
-   bassan.setYSpeed(0);
-   bassan.setXSpeed(0);
-   bassan.setDirect((double)wilbur);
- }
-}
-public void keyPressed() {
- if (key == 'w') {
-  bassan.accelerate(.1); 
-
- }
- 
- if(key == 's') {
-  bassan.accelerate(-.1); 
- }
- 
-  if(key == 'd') {
-  bassan.turn(20); 
- }
- 
- if(key == 'a') {
-  bassan.turn(-20); 
- }
-
-}
-
-public void setup() 
-{
-  size(500,500);
-  mrchan = new ArrayList<Astroids>();
-  bassan = new Spaceship();
-  hamilition = new Star [500];
-  
-  
-    for(int i =0; i < hamilition.length - 50 ; i++) {
-    hamilition[i] = new Star();
-  }for (int i = 450; i < hamilition.length;i++){
-    hamilition[i] = new bigStar();
-  }for(int i = 0; i < 20; i++){
-    mrchan.add(new Astroids());
+//your variable declarations here
+ship ship = new ship();
+Star [] star = new Star[500];
+ArrayList<Asteroid> rock = new ArrayList<Asteroid>();
+public void setup() {
+  //your code here
+  size(500, 500);
+  for (int i = 0; i < star.length; i++) {
+    star[i] = new Star();
+  }
+  for (int i = 0; i < 6; i++) {
+    rock.add(new Asteroid());
   }
 }
-
-public void draw() 
-{
+public void draw() {
+  //your code here
   background(0);
-   noStroke();
-    // Check for collision
-//float distance = dist(bassan.myCenterX,bassan.myCenterY,mrchan.myCenterX, mrchan.myCenterY);
-    for(int i =0; i < hamilition.length; i++) {
-   hamilition[i].show();
-  }for(int i = 0; i < mrchan.size(); i ++){
-    mrchan.get(i).move();
-    mrchan.get(i).show();
-    mrchan.get(i).accelerate(Math.random() / 25);
-    if(dist(bassan.getX(),bassan.getY(), mrchan.get(i).getX(), mrchan.get(i).getY())<20){
-      mrchan.remove(i);
-      i--;
+  for (int i = 0; i < star.length; i++) {
+    star[i].show();
+  }
+  ship.move();
+  ship.show();
+  for (int i = 0; i < rock.size(); i++) {
+    (rock.get(i)).move();
+    (rock.get(i)).show();
+    if (dist((float)ship.getX(), (float)ship.getY(), (float)(rock.get(i)).myCenterX, (float)(rock.get(i)).myCenterY) <= 20) {
+      rock.remove(i);
+
     }
   }
-  bassan.show();
-  bassan.move();
+}
+public void keyPressed() {
+  if (key == 'a') {
+    ship.turn(-20);
+  }
+  if (key == 'd') {
+    ship.turn(20);
+  }
+  if (key == 'w') {
+    ship.accelerate(0.2);
+  }
+  if (key == 's') {
+    ship.accelerate(-0.2);
+  }
+  if (key == 'h') {
+    //hyperspace
+    ship.hyperspace();
+  }
 }
