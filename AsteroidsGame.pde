@@ -2,6 +2,7 @@
 Spaceship ship = new Spaceship();
 Star [] star = new Star[500];
 ArrayList<Asteroid> rock = new ArrayList<Asteroid>();
+boolean lose = false;
 public void setup() {
   //your code here
   size(500, 500);
@@ -13,8 +14,10 @@ public void setup() {
   }
 }
 public void draw() {
-  //your code here
+
   background(0);
+  if (lose == false){
+   
   for (int i = 0; i < star.length; i++) {
     star[i].show();
   }
@@ -25,9 +28,13 @@ public void draw() {
     (rock.get(i)).show();
     if (dist((float)ship.getX(), (float)ship.getY(), (float)(rock.get(i)).myCenterX, (float)(rock.get(i)).myCenterY) <= 20) {
       rock.remove(i);
-
+lose = true;
     }
   }
+}
+else{ textSize(50);
+text ("You Lose!" , 50,150);
+}
 }
 public void keyPressed() {
   if (key == 'a') {
@@ -37,10 +44,10 @@ public void keyPressed() {
     ship.turn(20);
   }
   if (key == 'w') {
-    ship.accelerate(0.2);
+    ship.accelerate(0.15);
   }
   if (key == 's') {
-    ship.accelerate(-0.2);
+    ship.accelerate(-0.15);
   }
   if (key == 'h') {
     //hyperspace
