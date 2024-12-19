@@ -1,7 +1,7 @@
 //your variable declarations here
-ship ship = new ship();
+Spaceship spaceship = new Spaceship();
 Star [] star = new Star[500];
-ArrayList<Asteroid> rock = new ArrayList<Asteroid>();
+ArrayList<Asteroid> asteroids = new ArrayList<Asteroid>();
 public void setup() {
   //your code here
   size(500, 500);
@@ -9,7 +9,7 @@ public void setup() {
     star[i] = new Star();
   }
   for (int i = 0; i < 6; i++) {
-    rock.add(new Asteroid());
+    asteroids.add(new Asteroid());
   }
 }
 public void draw() {
@@ -18,32 +18,32 @@ public void draw() {
   for (int i = 0; i < star.length; i++) {
     star[i].show();
   }
-  ship.move();
-  ship.show();
-  for (int i = 0; i < rock.size(); i++) {
-    (rock.get(i)).move();
-    (rock.get(i)).show();
-    if (dist((float)ship.getX(), (float)ship.getY(), (float)(rock.get(i)).myCenterX, (float)(rock.get(i)).myCenterY) <= 20) {
-      rock.remove(i);
+  spaceship.move();
+  spaceship.show();
+  for (int i = 0; i < asteroids.size(); i++) {
+    (asteroids.get(i)).move();
+    (asteroids.get(i)).show();
+    if (dist((float)spaceship.getX(), (float)spaceship.getY(), (float)(asteroids.get(i)).myCenterX, (float)(asteroids.get(i)).myCenterY) <= 20) {
+      asteroids.remove(i);
 
     }
   }
 }
 public void keyPressed() {
   if (key == 'a') {
-    ship.turn(-20);
+    spaceship.turn(-20);
   }
   if (key == 'd') {
-    ship.turn(20);
+    spaceship.turn(20);
   }
   if (key == 'w') {
-    ship.accelerate(0.2);
+    spaceship.accelerate(0.2);
   }
   if (key == 's') {
-    ship.accelerate(-0.2);
+    spaceship.accelerate(-0.2);
   }
   if (key == 'h') {
     //hyperspace
-    ship.hyperspace();
+    spaceship.hyperspace();
   }
 }
