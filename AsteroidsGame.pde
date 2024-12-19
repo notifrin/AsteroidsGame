@@ -44,6 +44,6 @@ public void keyPressed() {
   }
   if (key == 'h') {
     //hyperspace
-    spaceship.hyperspace();
+    ship.hyperspace();
   }
 }
