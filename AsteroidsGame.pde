@@ -1,5 +1,5 @@
 //your variable declarations here
-Spaceship spaceship = new Spaceship();
+Spaceship ship = new Spaceship();
 Star [] star = new Star[500];
 ArrayList<Asteroid> rock = new ArrayList<Asteroid>();
 public void setup() {
@@ -18,12 +18,12 @@ public void draw() {
   for (int i = 0; i < star.length; i++) {
     star[i].show();
   }
-  spaceship.move();
-  spaceship.show();
+  ship.move();
+  ship.show();
   for (int i = 0; i < rock.size(); i++) {
     (rock.get(i)).move();
     (rock.get(i)).show();
-    if (dist((float)spaceship.getX(), (float)spaceship.getY(), (float)(rock.get(i)).myCenterX, (float)(rock.get(i)).myCenterY) <= 20) {
+    if (dist((float)ship.getX(), (float)ship.getY(), (float)(rock.get(i)).myCenterX, (float)(rock.get(i)).myCenterY) <= 20) {
       rock.remove(i);
 
     }
@@ -31,16 +31,16 @@ public void draw() {
 }
 public void keyPressed() {
   if (key == 'a') {
-    spaceship.turn(-20);
+    ship.turn(-20);
   }
   if (key == 'd') {
-    spaceship.turn(20);
+    ship.turn(20);
   }
   if (key == 'w') {
-    spaceship.accelerate(0.2);
+    ship.accelerate(0.2);
   }
   if (key == 's') {
-    spaceship.accelerate(-0.2);
+    ship.accelerate(-0.2);
   }
   if (key == 'h') {
     //hyperspace
