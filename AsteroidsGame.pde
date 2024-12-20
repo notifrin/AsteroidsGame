@@ -2,6 +2,7 @@
 Spaceship ship = new Spaceship();
 Star [] star = new Star[500];
 ArrayList<Asteroid> rock = new ArrayList<Asteroid>();
+ArrayList <Bullet> pew = new ArrayList<Bullet>();
 boolean lose = false;
 public void setup() {
   //your code here
@@ -16,13 +17,19 @@ public void setup() {
 public void draw() {
 
   background(0);
+   for (int i = pew.size() - 1; i >= 0; i--) {
+    pew.get(i).move();
+    pew.get(i).show();
+  }
   if (lose == false){
    
   for (int i = 0; i < star.length; i++) {
     star[i].show();
   }
-  ship.move();
+  
+ship.move();
   ship.show();
+  
   for (int i = 0; i < rock.size(); i++) {
     (rock.get(i)).move();
     (rock.get(i)).show();
@@ -52,5 +59,8 @@ public void keyPressed() {
   if (key == 'h') {
     //hyperspace
     ship.hyperspace();
-  }
+    }
+ if(key == ' '){
+ pew.add(new Bullet(ship));
+ }
 }
